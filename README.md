@@ -10,12 +10,16 @@ A simple demo to demonstrate integratio  with CI
 
 ### Pipeline
 
-- add github action [doc link](https://help.github.com/cn/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions#usage-limits)
+- add github action   
+[doc link](https://help.github.com/cn/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions#usage-limits)
 
 `mkdir -p .github/workflows && cd $_ && touch pipeline.yml`
 > `$_` 变量记录了上一个命令的最后一个参数的值（如果没有参数，则是命令本身）
 
 
+- add gitlab ci
+
+`touch .gitlab-ci.yml`
 
 ## to be done
 

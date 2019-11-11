@@ -1,0 +1,13 @@
+stages:
+  - build
+  - run
+
+build:
+  stage: build
+  script:
+    - docker build . --file Dockerfile --tag node-demo:$(date +%s) --tag node-demo:v1
+
+run docker:
+  stage: run
+  script:
+    - docker run -p 8080:8080 -d node-demo:v1
