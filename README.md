@@ -8,6 +8,8 @@ A simple demo to demonstrate integratio  with CI
 ### Run the image
 `docker run -p 49160:8080 -d <your username>/node-web-app`
 
+
+test sync to gitlab
 ---
 
 More ref:
