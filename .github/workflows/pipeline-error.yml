@@ -1,18 +1,26 @@
-name: Node Demo Pipeline 
+name: Debug Test Pipeline
+#不同的job会在不同的agent上运行,此pipeline在docker run会报错：找不到镜像
 on: 
   push:
     branches: 
       - master
 jobs:
 
-  build_run_image:
+  build_image:
 
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag node-demo:$(date +%s) --tag node-demo:v1
+    - name: Get hostname
+      run: hostname
+
+  run_image:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get hostame Again
+      run: hostname
     - name: Run image
       run: docker run -p 49160:8080 -d node-demo:v1
-    - name: curl test app
-      run: curl localhost:49160
+    needs: build_image
