@@ -13,6 +13,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag node-demo:$(date +%s) --tag node-demo:v1
     - name: Run image
-      run: docker run -p 49160:8080 -d node-demo:v1
+      run: docker run -p 8080:8080 -d node-demo:v1
     - name: curl test app
-      run: curl localhost:49160
+      run: curl 127.0.0.1:8080
