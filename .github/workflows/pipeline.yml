@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Test Pipeline
 
 on: 
   push:
@@ -6,7 +6,7 @@ on:
       - master
 jobs:
 
-  build:
+  build_image:
 
     runs-on: ubuntu-latest
 
@@ -14,3 +14,9 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag node-demo:$(date +%s)
+    - name: get hostname
+      run: hostname
+
+
+  # run_image:
+  #   runs-on: ubuntu-latest
