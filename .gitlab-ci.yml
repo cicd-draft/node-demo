@@ -7,8 +7,8 @@ image: docker:latest
 services:
   - docker:19.03.1-dind
 
-before_script:
-  - docker info
+# before_script:
+#   - docker info
 
 build:
   stage: build
@@ -20,8 +20,9 @@ getHostname:
   stage: run
   script:
     - hostname
+    - docker images
 
-#     # have to push to repo ,then pull 
+## have to push image to repo ,then pull 
 # run docker:
 #   stage: run
 #   script:
