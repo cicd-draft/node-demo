@@ -14,4 +14,9 @@ build_and_run:
   stage: build
   script:
     - docker build . --file Dockerfile --tag node-demo:$(date +%s) --tag node-demo:v1
-    - docker run -p 8080:8080 -d node-demo:v1
+
+#     # have to push to repo ,then pull 
+# run docker:
+#   stage: run
+#   script:
+#     - docker run -p 8080:8080 -d node-demo:v1
