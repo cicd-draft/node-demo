@@ -1,5 +1,5 @@
-name: Test Pipeline
-
+name: Debug Test Pipeline
+#不同的job会在不同的agent上运行
 on: 
   push:
     branches: 
