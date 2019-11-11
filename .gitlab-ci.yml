@@ -10,10 +10,16 @@ services:
 before_script:
   - docker info
 
-build_and_run:
+build:
   stage: build
   script:
     - docker build . --file Dockerfile --tag node-demo:$(date +%s) --tag node-demo:v1
+    - hostname
+
+getHostname:
+  stage: run
+  script:
+    - hostname
 
 #     # have to push to repo ,then pull 
 # run docker:
