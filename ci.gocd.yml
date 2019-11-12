@@ -1,0 +1,33 @@
+format_version: 9
+pipelines:
+  gocd-node-example:
+    group: defaultGroup
+    materials:
+      git:
+        git: https://github.com/cicd-draft/node-demo.git
+        branch: master
+    stages:
+    - build:
+        jobs:
+          build:
+            tasks:
+            - exec:
+                arguments:
+                - hostname
+                command: /bin/bash
+                run_if: passed
+            - exec:
+                arguments:
+                - pwd && ls 
+                command: /bin/bash
+                run_if: passed
+    - deploy:
+        jobs:
+          deploy_container:
+            tasks:
+            - exec:
+                arguments:
+                - c
+                - deploying container ...
+                command: /bin/bash
+                run_if: passed

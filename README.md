@@ -21,9 +21,14 @@ A simple demo to demonstrate integratio  with CI
 
 `touch .gitlab-ci.yml`
 
+- add gocd pipeline
+>For gocd, the default pattern is **/*.gocd.yaml and **/*.gocd.yml, which will recursively search the entire repository for all files ending with .gocd.yaml or .gocd.yml.
+
+`touch ci.gocd.yml`
+
 ## to be done
 
-pipeline 中使用curl 命令报错
+github actions pipeline 中使用curl 命令报错
 ```bash
     - name: curl test 8080
       uses: wei/curl@master
