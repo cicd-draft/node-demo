@@ -13,11 +13,13 @@ pipelines:
             tasks:
             - exec:
                 arguments:
+                - -c
                 - hostname
                 command: /bin/bash
                 run_if: passed
             - exec:
                 arguments:
+                - -c
                 - pwd && ls 
                 command: /bin/bash
                 run_if: passed
@@ -27,7 +29,7 @@ pipelines:
             tasks:
             - exec:
                 arguments:
-                - c
-                - deploying container ...
+                - -c
+                - echo "deploying container ..."
                 command: /bin/bash
                 run_if: passed
